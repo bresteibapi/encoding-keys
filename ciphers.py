@@ -1,5 +1,17 @@
-def caesar(password: str, number: int) -> str:
+import calculate_time
+from math import pi
 
+
+def caesar(password: str, number: int) -> str:
+    """Шифрует пароль шифром Цезаря
+
+    Args:
+        password (str): Пароль, который будем шифровать
+        number (int): Число, на которое будет съезжать пароль по ASCII
+
+    Returns:
+        str: Зашифрованный пароль
+    """
     new_password = ""  # создаём переменную, в которой будем хранить новый пароль
     for i in password:  # перебираем все символы
         # символ в новом пароле считывается
@@ -11,7 +23,30 @@ def caesar(password: str, number: int) -> str:
 
 
 def hash_password(password: str) -> int:
+    """Хеширование пароля
+
+    Args:
+        password (str): Исходный пароль
+
+    Returns:
+        int: Зашифрованный пароль
+    """
     new_password = hash(password)
+    return new_password
+
+
+def new_caesar(password: str) -> str:
+    """Шифрует по инновационному варианту шифра Цезаря
+
+    Args:
+        password (str): Пароль
+
+    Returns:
+        str: Зашифрованный пароль
+    """
+    key = calculate_time.get_ASCII_sum(password)
+    new_password = caesar(password, int(key * pi))
+
     return new_password
 
 
