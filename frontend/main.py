@@ -1,18 +1,3 @@
-# import streamlit as st
-
-
-# def set_password():
-#     st.text("Первый экран")
-
-
-# def get_password():
-#     st.text("Second screen")
-
-
-# set_password()
-# __import__("time").sleep(10)
-# get_password()
-
 import pandas as pd
 import streamlit as st
 import requests

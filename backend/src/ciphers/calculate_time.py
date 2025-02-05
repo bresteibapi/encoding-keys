@@ -30,4 +30,4 @@ def calculate_time_for_hacking(password: str) -> float:
 
 
 if __name__ == "__main__":
-    print(calculate_time_for_hacking(str((""))))
+    print(calculate_time_for_hacking(input("Введите пароль")))
