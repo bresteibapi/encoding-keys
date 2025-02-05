@@ -1,5 +1,5 @@
-import calculate_time
 from math import pi
+from . import calculate_time
 
 
 def caesar(password: str, number: int) -> str:
@@ -31,7 +31,7 @@ def hash_password(password: str) -> int:
     Returns:
         int: Зашифрованный пароль
     """
-    new_password = hash(password)
+    new_password = str(hash(password))
     return new_password
 
 
