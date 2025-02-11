@@ -20,7 +20,6 @@ backend_url = "http://127.0.0.1:8000"
 st.title("Шифрование паролей")
 
 
-# TODO: Написать логику скрещивания backend & frontend
 def show_password_screen():
     # Пользователь вводит пароль
     st.session_state["password"] = st.text_input(
@@ -30,10 +29,10 @@ def show_password_screen():
     # Кнопка для шифрования
     if st.button("Зашифровать пароль"):
         if st.session_state["password"]:
-            print(st.session_state)
             data = {"password": st.session_state["password"], "shift": shift}
             requests.post(f"{backend_url}/create_table/", json=data)
             st.session_state["encrypted"] = True
+
         else:
             st.warning("Пожалуйста, введите пароль.")
 
